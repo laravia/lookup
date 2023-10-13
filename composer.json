@@ -1,0 +1,51 @@
+{
+    "minimum-stability": "dev",
+    "name": "laravia/lookup",
+    "description": "laravia package lookup for heart",
+    "license": "license",
+    "authors": [
+        {
+            "name": "laravia",
+            "email": "code@laravia.art",
+            "homepage": "https://laravia.art"
+        }
+    ],
+    "homepage": "https://laravia.art",
+    "keywords": [
+        "Laravel",
+        "Laravia",
+        "Lookup"
+    ],
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravia\\Lookup\\App\\": "./app",
+            "Laravia\\Lookup\\Database\\": "./database",
+            "Laravia\\Lookup\\Database\\Seeders\\": "./database/seeders"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laravia\\Lookup\\App\\": "./app",
+            "Laravia\\Lookup\\Database\\": "./database",
+            "Laravia\\Lookup\\Database\\Seeders\\": "./database/seeders",
+            "Laravia\\Lookup\\Tests\\": "./tests"
+        }
+    },
+    "scripts": {
+        "post-root-package-update": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravia\\Lookup\\App\\Providers\\LookupServiceProvider"
+            ],
+            "aliases": {
+                "LaraviaLookup": "Laravia\\Lookup\\App\\Lookup"
+            }
+        }
+    }
+}
