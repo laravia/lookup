@@ -21,7 +21,7 @@ Route::middleware(['web', 'auth', 'platform'])->group(function () use ($prefix) 
         ->name('laravia.lookup.edit')->breadcrumbs(function (Trail $trail) {
             return $trail
                 ->parent('laravia.lookup')
-                ->push('Lookup');
+                ->push('Lookup edit/create');
         });
 
 });

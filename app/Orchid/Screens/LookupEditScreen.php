@@ -42,7 +42,7 @@ class LookupEditScreen extends Screen
                 ->canSee(!$this->lookup->exists),
 
             Button::make('Update')
-                ->icon('note')
+                ->icon('pencil')
                 ->method('createOrUpdate')
                 ->canSee($this->lookup->exists),
 
