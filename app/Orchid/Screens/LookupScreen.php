@@ -7,7 +7,7 @@ use Laravia\Lookup\App\Orchid\Layouts\LookupListLayout;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 
-class Lookup extends Screen
+class LookupScreen extends Screen
 {
 
     public function query(): iterable
