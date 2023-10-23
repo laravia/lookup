@@ -3,6 +3,7 @@
 namespace Laravia\Lookup\App\Orchid\Screens;
 
 use Illuminate\Http\Request;
+use Laravia\Heart\App\Laravia;
 use Laravia\Lookup\App\Models\Lookup as ModelsLookup;
 use Orchid\Screen\Fields\Input;
 use Orchid\Support\Facades\Layout;
@@ -57,10 +58,14 @@ class LookupEditScreen extends Screen
         return [
             Layout::columns([
                 Layout::rows([
-                    Input::make('lookup.filter')
+                    Select::make('lookup.filter')
                         ->title('Filter')
                         ->placeholder('Filter')
-                        ->required(),
+                        ->required()
+                        ->empty(__('Select or add a filter'))
+                        ->options(Laravia::getArrayWithDistinctFieldDataFromClassByKey(ModelsLookup::class, 'filter'))
+                        ->allowAdd()
+                        ,
                     Select::make('lookup.sort')
                         ->options(function ()
                         {
@@ -95,7 +100,7 @@ class LookupEditScreen extends Screen
 
         Alert::info('You have successfully created a lookup.');
 
-        return redirect()->route('laravia.lookup');
+        return redirect()->route('laravia.lookup.list');
     }
 
     public function remove()
